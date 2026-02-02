@@ -1,8 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-router.get('/get', (req, res) => {
-    res.send('Finance API is working');
+// module routes
+router.use("/", require("./state.routes"));
+
+// health / test route
+router.get("/get", (req, res) => {
+  res.send("Finance API is working");
 });
 
 module.exports = router;
